@@ -52,7 +52,13 @@ h5 {
     line-height: auto;
 }
 
-h1 {
+h1,
+.h1 {
+    color: $white;
+    @include adaptive-value("font-size", 54, 28, 1);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -1.08px;
 }
 
 h2 {
@@ -145,6 +151,13 @@ input[type="number"] {
         color: $white;
         background: $accent;
         transition: all 0.3s ease 0s;
+
+        svg {
+            fill: currentColor;
+            width: 12px;
+            height: 15px;
+            margin-left: 10px;
+        }
 
         @media (any-hover: hover) {
             &:hover {
