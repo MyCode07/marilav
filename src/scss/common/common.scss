@@ -6,11 +6,9 @@ body {
     scroll-behavior: smooth;
     font-style: normal;
     line-height: normal;
-    font-family: Gilroy;
+    font-family: Cygre;
     background-color: $white;
-    color: $black;
-    font-size: 16px;
-    font-weight: 400;
+    color: $dark-blue;
 
     &._noscroll {
         overflow: hidden;
@@ -54,93 +52,22 @@ h5 {
     line-height: auto;
 }
 
-.h1,
 h1 {
-    color: $blue;
-    @include adaptive-value("font-size", 48, 30, 1);
-    font-weight: 600;
-    line-height: 1;
 }
 
-.h2,
 h2 {
-    display: block;
-    color: $black;
-    @include adaptive-value("font-size", 32, 24, 1);
-    font-weight: 500;
-    text-transform: uppercase;
-    margin-bottom: 30px;
-
-    @media (max-width: 1024px) {
-        margin-bottom: 15px;
-    }
 }
 
 h3 {
-    @include adaptive-value("font-size", 24, 20, 1);
-    font-weight: 500;
-    text-transform: uppercase;
 }
 
 h4 {
-    @include adaptive-value("font-size", 20, 18, 1);
-    font-weight: 500;
-    text-transform: uppercase;
 }
 
 p {
-    @include adaptive-value("font-size", 16, 14, 1);
-    font-weight: 400;
 }
 
 ._btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 30px;
-    width: fit-content;
-
-    font-size: 20px;
-    font-weight: 500;
-    transition: opacity 0.3s ease 0s;
-
-    @media (any-hover: hover) {
-        &:hover {
-            opacity: 0.7;
-        }
-    }
-
-    @media (max-width: 1024px) {
-        font-size: 18px;
-        padding: 16px 25px;
-    }
-
-    // ._btn-blue
-
-    &-blue {
-        color: $white;
-        background-color: $light-blue;
-    }
-}
-
-._secondary-button {
-    display: flex;
-    align-items: center;
-    color: $white;
-    transition: opacity 0.3s ease 0s;
-
-    svg,
-    img {
-        fill: currentColor;
-        height: 8px;
-        width: fit-content;
-    }
-
-    @media (any-hover: hover) {
-        &:hover {
-            opacity: 0.7;
-        }
-    }
 }
 
 figure,
@@ -167,62 +94,83 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
-.navigation {
-    margin-left: auto;
-    margin-right: auto;
+._btn {
     display: flex;
     align-items: center;
-    gap: 15px;
-    width: fit-content;
+    justify-content: center;
 
-    @media (max-width: 1024px) {
-        gap: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    border-radius: 30px;
+    height: 48px;
+
+    padding: 0 18px;
+
+    span {
+        position: relative;
+        top: 1px;
     }
 
-    button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    img,
+    svg {
+        width: 16px;
+        height: 16px;
         flex: 0 0 auto;
-        width: 30px;
-        height: 30px;
+        fill: currentColor;
+    }
 
+    // ._btn-stroke
+
+    &-stroke {
+        border: 1px solid rgba(55, 141, 177, 0.5);
+        color: $light-blue;
+        transition: all 0.3s ease 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                border-color: #378db1;
+                background-color: #378db1;
+                color: $white;
+            }
+        }
+    }
+
+    // ._btn-main
+
+    &-main {
+        color: $white;
+        background: $accent;
+        transition: all 0.3s ease 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background: unset;
+                background-color: #1a9cca;
+            }
+        }
+    }
+}
+
+.navigation {
+    button {
         img,
         svg {
-            pointer-events: none;
-            width: 30px;
-            object-fit: contain;
-            fill: currentColor;
-            flex: 0 0 auto;
         }
     }
 
     .swiper-button-disabled {
-        opacity: 0.5;
     }
 }
 
 .pagination {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-
-    @media (max-width: 1024px) {
-        gap: 10px;
-    }
-
     span {
-        background-color: $blue;
-        width: 10px;
-        height: 10px;
-        flex: 0 0 auto;
-        border-radius: 100%;
-        opacity: 0.4;
-        cursor: pointer;
     }
 
     .swiper-pagination-bullet-active {
-        opacity: 1;
     }
 }
 
@@ -239,136 +187,11 @@ input[type="number"] {
     }
 }
 
-.swiper-scrollbar {
-    height: 8px;
-    margin-top: 30px;
-    background-color: rgba($color: $light-blue, $alpha: 0.2);
-
-    .swiper-scrollbar-drag {
-        height: 100%;
-        background-color: $light-blue;
-        border-radius: 20px;
-    }
-}
-
 [data-tab-content] {
     display: none;
 
     &._active {
         display: block;
-    }
-}
-
-.pages-tabs {
-    .section__body {
-        padding: 25px 30px;
-        background-color: #f5f6fa;
-
-        @media (max-width: 1024px) {
-            padding: 15px;
-        }
-    }
-
-    .tabs-content {
-        padding: 0 !important;
-        background-color: unset;
-    }
-}
-
-.tabs {
-    // .tabs-main
-
-    &-main {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 25px 30px;
-        gap: 30px;
-        background-color: #f5f6fa;
-        margin-bottom: 15px;
-
-        @media (max-width: 1024px) {
-            gap: 15px;
-            padding: 15px;
-            overflow-y: auto;
-        }
-
-        button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 45px;
-            padding: 0px 30px;
-            background-color: $white;
-            transition: all 0.3s ease 0s;
-            white-space: nowrap;
-
-            color: $black;
-            font-size: 20px;
-            font-weight: 500;
-
-            @media (max-width: 1024px) {
-                font-size: 18px;
-                height: 40px;
-                padding: 0 15px;
-            }
-
-            &._active {
-                color: $white;
-                background-color: $light-blue;
-            }
-        }
-    }
-
-    // .tabs-secondary
-
-    &-secondary {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-        padding-bottom: 15px;
-        margin-bottom: 15px;
-
-        @media (max-width: 1024px) {
-            gap: 15px;
-            overflow-y: auto;
-        }
-
-        button {
-            color: $gray;
-            font-size: 20px;
-            font-weight: 500;
-            transition: color 0.3s ease 0s;
-            white-space: nowrap;
-
-            @media (max-width: 1024px) {
-                font-size: 18px;
-            }
-
-            &._active {
-                color: $black;
-            }
-        }
-    }
-    // .tabs-content
-
-    &-content {
-        display: flex;
-        padding: 25px 30px;
-        background-color: #f5f6fa;
-
-        @media (max-width: 1024px) {
-            padding: 15px;
-        }
-
-        [data-tab-content] {
-            display: none;
-            width: 100%;
-
-            &._active {
-                display: block;
-            }
-        }
     }
 }
 
@@ -463,7 +286,6 @@ input[type="number"] {
 
         li {
             gap: 10px;
-            color: $black;
             font-size: 20px;
 
             @media (max-width: 1024px) {
@@ -477,58 +299,6 @@ input[type="number"] {
         display: block;
         padding-top: 20px;
         border-top: 1px solid #cfe4f1;
-    }
-}
-
-._subtitle {
-    margin-bottom: 30px;
-}
-
-._directions {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    &.subdirection-links {
-        padding: 25px 30px;
-        background-color: #f5f6fa;
-        margin-top: 50px;
-
-        @media (max-width: 1024px) {
-            padding: 15px;
-            margin-top: 25px;
-        }
-    }
-
-    li {
-        a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: $gray;
-            transition: color 0.3s ease 0s;
-
-            svg,
-            img {
-                transition: opacity 0.3s ease 0s;
-                opacity: 0;
-                width: 14px;
-                height: 9px;
-            }
-        }
-
-        @media (any-hover: hover) {
-            &:hover {
-                a {
-                    color: $black;
-
-                    svg,
-                    img {
-                        opacity: 1;
-                    }
-                }
-            }
-        }
     }
 }
 
@@ -561,7 +331,7 @@ input[type="number"] {
         font-size: 12px;
         padding: 5px;
         color: red;
-        background-color: $black;
+        background-color: $dark-blue;
     }
 
     ul {
@@ -573,7 +343,7 @@ input[type="number"] {
 
         li {
             padding: 5px;
-            border-bottom: 1px solid $black;
+            border-bottom: 1px solid $dark-blue;
         }
     }
 }

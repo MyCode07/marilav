@@ -13,10 +13,10 @@ if (burger) {
         burger.classList.toggle('_active');
 
         if (menu.classList.contains('_open')) {
-            // lockPadding();
+            lockPadding();
         }
         else {
-            // unLockPadding();
+            unLockPadding();
         }
     })
 }
@@ -44,7 +44,9 @@ if (allMenuLinks.length) {
 
 
 // menu arrow buttom
-const arrow = `<button><svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15.1421 1L8.07107 8.07107L1 1" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+const arrow = `<button><svg width="13" height="8" viewBox="0 0 13 8"  xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.03441 0.0923667L0.658154 1.46862L5.12349 5.93395L5.12328 5.93416L6.49953 7.31041L12.341 1.46892L10.9648 0.0926666L6.49974 4.5577L2.03441 0.0923667Z"/>
+</svg>
 </button>`;
 
 // add menu summenu opener button
@@ -108,10 +110,10 @@ document.addEventListener('click', function (e) {
 
 
 
-const pagesMenu = document.querySelector('.pages-menu');
-const pagesMenuButton = document.querySelector('.pages-menu button');
+// const pagesMenu = document.querySelector('.pages-menu');
+// const pagesMenuButton = document.querySelector('.pages-menu button');
 
-pagesMenuButton.addEventListener('click', function () {
-    pagesMenu.classList.toggle('_active');
+// pagesMenuButton.addEventListener('click', function () {
+//     pagesMenu.classList.toggle('_active');
 
-})
+// })
