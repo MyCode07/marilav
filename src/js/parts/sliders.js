@@ -19,18 +19,22 @@ if (sliders.length) {
                 freeMode: true,
                 watchSlidesProgress: true,
                 slidesPerView: 'auto',
-                spaceBetween: 8,
+                spaceBetween: 4,
             });
 
             new Swiper('.mainSwiper', {
                 modules: [
-                    Thumbs, Pagination
+                    Navigation, Thumbs, Pagination
                 ],
                 spaceBetween: 20,
                 slidesPerView: 1,
                 pagination: {
                     el: pagination,
                     clickable: true,
+                },
+                navigation: {
+                    prevEl: prev,
+                    nextEl: next,
                 },
                 thumbs: {
                     swiper: thumbs,
