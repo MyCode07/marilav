@@ -268,6 +268,7 @@ input[type="number"] {
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 8px;
             color: #a9bbc6;
             @include adaptive-value("font-size", 20, 14, 1);
             font-weight: 500;

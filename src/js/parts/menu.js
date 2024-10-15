@@ -13,10 +13,10 @@ if (burger) {
         burger.classList.toggle('_active');
 
         if (menu.classList.contains('_open')) {
-            lockPadding();
+            // lockPadding();
         }
         else {
-            unLockPadding();
+            // unLockPadding();
         }
     })
 }

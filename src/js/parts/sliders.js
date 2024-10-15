@@ -83,32 +83,25 @@ if (sliders.length) {
                 }
             })
         }
-        if (slider.closest('.gallery')) {
+        if (slider.closest('.team__box')) {
             new Swiper(slider, {
-                modules: [Autoplay, Navigation, Pagination],
-                slidesPerView: "auto",
-                centeredSlides: true,
-                navigation: {
-                    prevEl: prev,
-                    nextEl: next,
-                },
-                pagination: {
-                    el: pagination,
-                    type: 'bullets',
-                    clickable: true,
+                modules: [Autoplay, Scrollbar],
+                scrollbar: {
+                    el: ".swiper-scrollbar",
+                    hide: true,
                 },
                 breakpoints: {
                     300: {
-                        spaceBetween: 20,
-                        slidesPerView: 1,
+                        slidesPerView: 2,
+                        spaceBetween: 8,
+
                     },
-                    500: {
-                        spaceBetween: 50,
+                    769: {
+                        slidesPerView: 3,
                     },
                     1025: {
-                        spaceBetween: 112,
-                        slidesPerView: "auto",
-
+                        slidesPerView: 4,
+                        spaceBetween: 30,
                     },
                 }
             })
