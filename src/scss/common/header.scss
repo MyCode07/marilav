@@ -382,6 +382,8 @@
                 width: 24px;
                 height: 24px;
                 flex: 0 0 auto;
+                fill: #A8B9BF;
+
             }
         }
 
@@ -398,6 +400,7 @@
             svg {
                 flex: 0 0 auto;
                 pointer-events: none;
+                fill: #A8B9BF;
             }
 
             &._open {

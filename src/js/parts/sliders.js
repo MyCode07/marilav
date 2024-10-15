@@ -41,118 +41,103 @@ if (sliders.length) {
                 },
             });
         }
-        // if (slider.closest('.consultations')) {
-        //     new Swiper(slider, {
-        //         modules: [Autoplay, Navigation, Pagination],
-        //         slidesPerView: 3,
-        //         spaceBetween: 20,
-        //         navigation: {
-        //             prevEl: prev,
-        //             nextEl: next,
-        //         },
-        //         pagination: {
-        //             el: pagination,
-        //             type: 'bullets',
-        //             clickable: true,
-        //         },
-        //         breakpoints: {
-        //             300: {
-        //                 slidesPerView: 1,
-        //             },
-        //             500: {
-        //                 slidesPerView: 2,
-        //             },
-        //             1025: {
-        //                 slidesPerView: 3,
-        //             },
-        //         }
-        //     })
-        // }
-        // if (slider.closest('.video')) {
-        //     new Swiper(slider, {
-        //         modules: [Autoplay, Navigation, Pagination],
-        //         slidesPerView: 4,
-        //         spaceBetween: 20,
-        //         navigation: {
-        //             prevEl: prev,
-        //             nextEl: next,
-        //         },
-        //         pagination: {
-        //             el: pagination,
-        //             type: 'bullets',
-        //             clickable: true,
-        //         },
-        //         breakpoints: {
-        //             300: {
-        //                 slidesPerView: 2,
-        //                 spaceBetween: 10,
+        if (slider.closest('.advantages') && window.innerWidth <= 1024) {
+            new Swiper(slider, {
+                modules: [Autoplay, Navigation, Pagination],
+                slidesPerView: "auto",
+                spaceBetween: 8,
+                navigation: {
+                    prevEl: prev,
+                    nextEl: next,
+                },
+                pagination: {
+                    el: pagination,
+                    type: 'bullets',
+                    clickable: true,
+                },
 
-        //             },
-        //             500: {
-        //                 slidesPerView: 3,
-        //                 spaceBetween: 20,
-        //             },
-        //             1025: {
-        //                 slidesPerView: 4,
-        //             },
-        //         }
-        //     })
-        // }
-        // if (slider.closest('.gallery')) {
-        //     new Swiper(slider, {
-        //         modules: [Autoplay, Navigation, Pagination],
-        //         slidesPerView: "auto",
-        //         centeredSlides: true,
-        //         navigation: {
-        //             prevEl: prev,
-        //             nextEl: next,
-        //         },
-        //         pagination: {
-        //             el: pagination,
-        //             type: 'bullets',
-        //             clickable: true,
-        //         },
-        //         breakpoints: {
-        //             300: {
-        //                 spaceBetween: 20,
-        //                 slidesPerView: 1,
-        //             },
-        //             500: {
-        //                 spaceBetween: 50,
-        //             },
-        //             1025: {
-        //                 spaceBetween: 112,
-        //                 slidesPerView: "auto",
+            })
+        }
+        if (slider.closest('.discounts')) {
+            new Swiper(slider, {
+                modules: [Autoplay, Navigation, Pagination],
+                slidesPerView: "auto",
+                navigation: {
+                    prevEl: prev,
+                    nextEl: next,
+                },
+                pagination: {
+                    el: pagination,
+                    type: 'fraction',
+                },
+                breakpoints: {
+                    300: {
+                        spaceBetween: 8,
+                    },
+                    1025: {
+                    },
+                    1025: {
+                        slidesPerView: "auto",
+                        spaceBetween: 30,
+                    },
+                }
+            })
+        }
+        if (slider.closest('.gallery')) {
+            new Swiper(slider, {
+                modules: [Autoplay, Navigation, Pagination],
+                slidesPerView: "auto",
+                centeredSlides: true,
+                navigation: {
+                    prevEl: prev,
+                    nextEl: next,
+                },
+                pagination: {
+                    el: pagination,
+                    type: 'bullets',
+                    clickable: true,
+                },
+                breakpoints: {
+                    300: {
+                        spaceBetween: 20,
+                        slidesPerView: 1,
+                    },
+                    500: {
+                        spaceBetween: 50,
+                    },
+                    1025: {
+                        spaceBetween: 112,
+                        slidesPerView: "auto",
 
-        //             },
-        //         }
-        //     })
-        // }
-        // if (slider.closest('.doctors')) {
-        //     new Swiper(slider, {
-        //         modules: [Autoplay, Scrollbar],
-        //         slidesPerView: 4,
-        //         spaceBetween: 20,
-        //         scrollbar: {
-        //             el: ".swiper-scrollbar",
-        //             hide: true,
-        //         },
-        //         breakpoints: {
-        //             300: {
-        //                 slidesPerView: 1,
-        //                 spaceBetween: 10,
+                    },
+                }
+            })
+        }
+        if (slider.closest('.doctors')) {
+            new Swiper(slider, {
+                modules: [Autoplay, Scrollbar],
+                slidesPerView: 4,
+                spaceBetween: 20,
+                scrollbar: {
+                    el: ".swiper-scrollbar",
+                    hide: true,
+                },
+                breakpoints: {
+                    300: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
 
-        //             },
-        //             500: {
-        //                 slidesPerView: 3,
-        //                 spaceBetween: 20,
-        //             },
-        //             1025: {
-        //                 slidesPerView: 4,
-        //             },
-        //         }
-        //     })
-        // }
+                    },
+                    500: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                    1025: {
+                        slidesPerView: 4,
+                    },
+                }
+            })
+        }
     })
 }
 

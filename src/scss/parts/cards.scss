@@ -1,0 +1,187 @@
+.advantages-card {
+    display: flex;
+    flex-direction: column;
+    padding: 33px 31px;
+    border-radius: 20px;
+    background: linear-gradient(133deg, #264e5f 21.67%, #367a96 71.16%), #f4fbfd;
+    min-height: 364px;
+    height: 100%;
+
+    @media (max-width: 1024px) {
+        padding: 20px 24px;
+        min-height: 245px;
+    }
+
+    img,
+    svg {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 17px;
+    }
+
+    h4 {
+        color: $white;
+        margin-bottom: 30px;
+    }
+
+    p {
+        color: rgba(255, 255, 255, 0.8);
+        @include adaptive-value("font-size", 24, 16, 1);
+        line-height: 1.2;
+        letter-spacing: -0.48px;
+    }
+}
+
+.discount-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+
+    // .discount-card__image
+
+    &__image {
+        width: 100%;
+        border-radius: 30px;
+        overflow: hidden;
+        @include adaptive-value("height", 448, 213, 1);
+
+        @media (max-width: 1024px) {
+            border-radius: 20px;
+        }
+
+        img,
+        picture {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    // .discount-card__info
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        flex: 1 1 auto;
+
+        h6 {
+            color: $white;
+            @include adaptive-value("font-size", 36, 20, 1);
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -0.72px;
+
+            @media (max-width: 1024px) {
+                letter-spacing: -0.4px;
+            }
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: auto;
+
+            @media (max-width: 768px) {
+                br {
+                    display: none;
+                }
+            }
+        }
+
+        ._btn-main {
+            font-size: 18px;
+            font-weight: 500;
+            padding: 0 30px;
+
+            @media (min-width: 1025px) {
+                min-width: 230px;
+                height: 70px;
+            }
+
+            @media (max-width: 1024px) {
+                height: 60px;
+                font-size: 16px;
+            }
+
+            svg {
+                width: 12px;
+                height: 12px;
+            }
+        }
+    }
+}
+
+.reviews-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    border-radius: 30px;
+    padding: 9px 13px;
+    height: 250px;
+
+    // .// .reviews-card__center
+
+    &__center {
+        padding-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        width: 100%;
+        height: 100%;
+    }
+
+    // .reviews-card__logo
+
+    &__logo {
+        height: 30px;
+    }
+
+    // .reviews-card__grade
+
+    &__grade {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        span {
+            color: $dark-blue;
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -0.64px;
+        }
+
+        div {
+            display: flex;
+            svg,
+            img {
+                display: block;
+                width: 17px;
+                height: 17px;
+                object-fit: contain;
+            }
+        }
+    }
+
+    button {
+        margin-left: auto;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e9f3f6;
+
+        svg {
+            fill: $dark-blue;
+            width: 8px;
+        }
+    }
+}
