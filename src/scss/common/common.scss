@@ -465,3 +465,32 @@ input[type="number"] {
         }
     }
 }
+
+._pl20 {
+    position: relative;
+
+    @media (min-width: 1025px) {
+        padding-left: 20%;
+    }
+}
+
+._social {
+    flex: 0 0 auto;
+    display: flex;
+    gap: 5px;
+
+    a {
+        flex: 0 0 auto;
+        display: flex;
+        width: 48px;
+        height: 48px;
+
+        img,
+        svg {
+            width: 400%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+}
