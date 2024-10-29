@@ -386,3 +386,103 @@
         }
     }
 }
+
+.page-hero {
+    padding: 20px 0 60px 0;
+
+    border-radius: 0px 0px 30px 30px;
+    background: linear-gradient(133deg, #1f4250 21.67%, #367a96 71.16%), #306a81;
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+        padding: 20px 0 40px 0;
+        border-radius: 0px 0px 20px 20px;
+    }
+
+    .breadcrumbs {
+        @include adaptive-value("margin-bottom", 104, 30, 1);
+    }
+
+    h1 {
+        @include adaptive-value("font-size", 70, 28, 1);
+        line-height: 1.1;
+        margin-bottom: 30px;
+
+        @media (max-width: 768px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    h1,
+    p {
+        text-align: center;
+        color: $white;
+    }
+
+    p {
+        @include adaptive-value("margin-bottom", 65, 20, 1);
+    }
+
+    label {
+        width: fit-content;
+
+        display: block;
+        padding: 20px;
+        background-color: $dark-blue;
+        text-align: center;
+        color: #fcfeff;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+        border-radius: 100px;
+        height: 49px;
+        margin-bottom: 10px;
+        margin-inline: auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 768px) {
+            font-size: 13px;
+            height: 38px;
+        }
+    }
+
+    ._btn {
+        margin-inline: auto;
+        @include adaptive-value("height", 84, 63, 1);
+
+        max-width: 368px;
+        width: 100%;
+
+        @media (max-width: 425px) {
+            max-width: 100%;
+        }
+    }
+
+    // .page-hero__video
+
+    &__video {
+        margin-top: -120px;
+        position: relative;
+        z-index: 1;
+
+        @include adaptive-value("margin-bottom", 90, 40, 1);
+
+        @media (max-width: 768px) {
+            margin-top: -105px;
+        }
+    }
+}
+
+body:has(.page-hero + .page-hero__video) {
+    .page-hero {
+        padding: 20px 0 215px 0;
+        margin-bottom: 0 !important;
+
+        @media (max-width: 768px) {
+            padding: 20px 0 145px 0;
+        }
+    }
+}

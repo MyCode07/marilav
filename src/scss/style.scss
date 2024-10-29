@@ -60,3 +60,50 @@
 
 // load section
 @import "parts/cards";
+
+.pages-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $white;
+    z-index: 10;
+    display: block;
+    max-width: 400px;
+    border: 1px solid;
+
+    .open {
+        display: none;
+    }
+
+    &._active {
+        .open {
+            display: block;
+        }
+        .close {
+            display: none;
+        }
+        ul {
+            display: none;
+        }
+    }
+
+    button {
+        font-size: 12px;
+        padding: 5px;
+        color: red;
+        background-color: $dark-blue;
+        width: 100%;
+        display: block;
+    }
+
+    ul {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+
+        a {
+            padding: 5px;
+            border-bottom: 1px solid $dark-blue;
+        }
+    }
+}

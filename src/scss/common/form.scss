@@ -119,6 +119,26 @@
         ._btn {
             width: 100%;
             height: 83px;
+            cursor: pointer;
+
+            position: relative;
+
+            input {
+                cursor: pointer;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                opacity: 0;
+            }
+
+            span,
+            svg,
+            img {
+                pointer-events: none;
+            }
 
             @media (max-width: 1024px) {
                 height: 70px;

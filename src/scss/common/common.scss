@@ -148,7 +148,8 @@ input[type="number"] {
     border-radius: 60px;
     height: 48px;
 
-    padding: 0 18px;
+    padding: 18px;
+    transition: all 0.3s ease 0s;
 
     span {
         position: relative;
@@ -168,7 +169,6 @@ input[type="number"] {
     &-stroke {
         border: 1px solid rgba(55, 141, 177, 0.5);
         color: $light-blue;
-        transition: all 0.3s ease 0s;
 
         @media (any-hover: hover) {
             &:hover {
@@ -183,22 +183,54 @@ input[type="number"] {
 
     &-main {
         color: $white;
-        background: $accent;
-        transition: all 0.3s ease 0s;
-        font-size: 20px;
+        background: $light-blue;
+
+        @include adaptive-value("font-size", 20, 15, 1);
 
         svg {
             fill: currentColor;
             width: 12px;
             height: 15px;
             margin-left: 10px;
+
+            @media (max-width: 768px) {
+                height: 13px;
+                margin-left: 8px;
+            }
         }
 
         @media (any-hover: hover) {
             &:hover {
-                background: unset;
                 background-color: #1a9cca;
             }
+        }
+    }
+
+    // ._btn-label
+
+    &-label {
+        position: relative;
+        width: fit-content;
+        margin-inline: auto;
+
+        &-text {
+            background-color: #164057;
+            color: $white;
+            width: fit-content;
+            display: block;
+            border-radius: 100px;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 400;
+            line-height: 1;
+
+            padding: 4px 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            transform: translate(20px, 50%);
         }
     }
 }
@@ -218,8 +250,9 @@ input[type="number"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 18px;
+    gap: 12px;
     margin-top: 28px;
+    flex-wrap: wrap;
 
     span {
         background-color: #c5d8de;
@@ -335,12 +368,15 @@ input[type="number"] {
             align-items: center;
             gap: 5px;
 
-            color: $gray;
-            font-size: 12px;
+            font-size: 15px;
             font-weight: 500;
             white-space: nowrap;
 
             transition: color 0.3s ease 0s;
+
+            @media (max-width: 768px) {
+                font-size: 12px;
+            }
 
             @media (any-hover: hover) {
                 &:hover {
@@ -348,8 +384,18 @@ input[type="number"] {
                 }
             }
 
-            &.active {
-                color: $dark-blue;
+            & > span {
+                color: rgba($color: $white, $alpha: 0.42);
+            }
+
+            a {
+                color: $white;
+            }
+
+            svg {
+                width: 6px;
+                height: 6px;
+                fill: rgba($color: $white, $alpha: 0.42);
             }
         }
     }
@@ -378,6 +424,7 @@ input[type="number"] {
 
     p {
         font-size: 20px;
+        font-weight: 400;
 
         @media (max-width: 1024px) {
             font-size: 14px;
@@ -420,57 +467,11 @@ input[type="number"] {
     }
 }
 
-.pages-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: $white;
-    z-index: 10;
-    display: block;
-    max-width: 400px;
-
-    .open {
-        display: none;
-    }
-
-    &._active {
-        .open {
-            display: block;
-        }
-        .close {
-            display: none;
-        }
-        ul {
-            display: none;
-        }
-    }
-
-    button {
-        font-size: 12px;
-        padding: 5px;
-        color: red;
-        background-color: $dark-blue;
-    }
-
-    ul {
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        overflow-y: scroll;
-        max-height: 500px;
-
-        li {
-            padding: 5px;
-            border-bottom: 1px solid $dark-blue;
-        }
-    }
-}
-
 ._pl20 {
     position: relative;
 
     @media (min-width: 1025px) {
-        padding-left: 20%;
+        padding-left: $sec_margin;
     }
 }
 
@@ -492,5 +493,61 @@ input[type="number"] {
             object-fit: contain;
             object-position: center;
         }
+    }
+}
+
+iframe {
+    border-radius: 30px;
+    margin-inline: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    min-height: 240px;
+
+    @include adaptive-value("height", 600, 240, 1);
+
+    @media (max-width: 768px) {
+        border-radius: 20px;
+    }
+}
+
+.prev,
+.next {
+    flex: 0 0 auto;
+    width: 54px;
+    height: 54px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #367a96;
+
+    img,
+    svg {
+        flex: 0 0 auto;
+        pointer-events: none;
+        width: 12px;
+        fill: $white;
+    }
+
+    &.swiper-button-disabled {
+        opacity: 0.5;
+    }
+}
+
+.prev {
+    svg,
+    img {
+        transform: rotate(-180deg);
+        margin-left: -2px;
+    }
+}
+
+.next {
+    svg,
+    img {
+        margin-left: 2px;
     }
 }

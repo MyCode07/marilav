@@ -41,23 +41,6 @@ if (sliders.length) {
                 },
             });
         }
-        if (slider.closest('.advantages') && window.innerWidth <= 1024) {
-            new Swiper(slider, {
-                modules: [Autoplay, Navigation, Pagination],
-                slidesPerView: "auto",
-                spaceBetween: 8,
-                navigation: {
-                    prevEl: prev,
-                    nextEl: next,
-                },
-                pagination: {
-                    el: pagination,
-                    type: 'bullets',
-                    clickable: true,
-                },
-
-            })
-        }
         if (slider.closest('.discounts')) {
             new Swiper(slider, {
                 modules: [Autoplay, Navigation, Pagination],
@@ -130,6 +113,39 @@ if (sliders.length) {
                     },
                 }
             })
+        }
+        if (window.innerWidth <= 1024) {
+            if (slider.closest('.advantages') || slider.closest('.about-text')) {
+
+                if (slider.closest('.has-slider-nav')) {
+                    new Swiper(slider, {
+                        modules: [Autoplay, Pagination, Navigation],
+                        slidesPerView: "auto",
+                        spaceBetween: 10,
+                        navigation: {
+                            prevEl: prev,
+                            nextEl: next,
+                        },
+                        pagination: {
+                            el: pagination,
+                            type: 'bullets',
+                            clickable: true,
+                        },
+                    })
+                }
+                else {
+                    new Swiper(slider, {
+                        modules: [Autoplay, Pagination],
+                        slidesPerView: "auto",
+                        spaceBetween: 10,
+                        pagination: {
+                            el: pagination,
+                            type: 'bullets',
+                            clickable: true,
+                        },
+                    })
+                }
+            }
         }
     })
 }

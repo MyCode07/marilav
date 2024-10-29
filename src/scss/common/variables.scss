@@ -2,9 +2,11 @@ $container: 1290;
 $padding: 20;
 $containerWithPadding: $container + ($padding * 2);
 
-$accent: linear-gradient(90deg, #1AACDF 0%, #2DC5FA 100%);
-$dark-blue-gradient: linear-gradient(90deg, #275264 0%, #346B81 100%);
-$dark-blue:#164057;
-$light-blue:#01A7E1;
-$white: #ffffff; 
+$accent: linear-gradient(90deg, #1aacdf 0%, #2dc5fa 100%);
+$dark-blue-gradient: linear-gradient(90deg, #275264 0%, #346b81 100%);
+$dark-blue: #164057;
+$light-blue: #01a7e1;
+$white: #ffffff;
 $gray: #718590;
+
+$sec_margin: 25.427%;
