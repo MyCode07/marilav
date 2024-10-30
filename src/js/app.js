@@ -5,18 +5,15 @@ import "./parts/tabs.js";
 // import "./parts/popup.js";
 import "./parts/menu.js";
 import "./parts/search.js";
-// import { accorden } from "./static/accordeon.js";
-// import { animateAction, animateStaggerAction } from "./parts/animations.js";
-// import { runTicker } from "./static/ticker.js";
-// import { stickyHeader } from "./parts/header.js";
- 
- 
-// import { Fancybox } from "@fancyapps/ui";
+import { accorden } from "./static/accordeon.js";
 
-// runTicker();
-// hoverMouse();
 
-// accorden();
+
+import { Fancybox } from "@fancyapps/ui";
+
+
+
+accorden();
 
 
 
@@ -25,12 +22,12 @@ import "./parts/search.js";
 // animateAction();
 // animateStaggerAction();
 
-// Fancybox.bind("[data-fancybox]", {
-//     Carousel: {
-//         Panzoom: {
-//         },
-//     },
-// });
+Fancybox.bind("[data-fancybox]", {
+    Carousel: {
+        Panzoom: {
+        },
+    },
+});
 
 // const inputItems = [...document.querySelectorAll('input ')].concat([...document.querySelectorAll('textarea ')])
 // if (inputItems.length) {

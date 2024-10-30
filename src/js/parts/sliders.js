@@ -114,6 +114,51 @@ if (sliders.length) {
                 }
             })
         }
+        if (slider.closest('.works')) {
+            new Swiper(slider, {
+                modules: [Autoplay, Pagination],
+                slidesPerView: 'auto',
+                pagination: {
+                    el: pagination,
+                    clickable: true,
+                },
+                breakpoints: {
+                    300: {
+                        spaceBetween: 12,
+                    },
+
+                    1025: {
+                        spaceBetween: 28,
+                    },
+                }
+            })
+        }
+        if (slider.closest('.licens')) {
+            new Swiper(slider, {
+                modules: [Pagination],
+                pagination: {
+                    el: pagination,
+                    clickable: true,
+                },
+                breakpoints: {
+                    300: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    500: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                    1025: {
+                        spaceBetween: 30,
+                        slidesPerView: 4,
+                    },
+                }
+            })
+        }
+
+
+
         if (window.innerWidth <= 1024) {
             if (slider.closest('.advantages') || slider.closest('.about-text')) {
 
@@ -128,7 +173,6 @@ if (sliders.length) {
                         },
                         pagination: {
                             el: pagination,
-                            type: 'bullets',
                             clickable: true,
                         },
                     })
@@ -140,7 +184,6 @@ if (sliders.length) {
                         spaceBetween: 10,
                         pagination: {
                             el: pagination,
-                            type: 'bullets',
                             clickable: true,
                         },
                     })

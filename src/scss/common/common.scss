@@ -213,6 +213,10 @@ input[type="number"] {
         width: fit-content;
         margin-inline: auto;
 
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+
         &-text {
             background-color: #164057;
             color: $white;
@@ -231,6 +235,11 @@ input[type="number"] {
             text-align: center;
 
             transform: translate(20px, 50%);
+
+            @media (max-width: 768px) {
+                font-size: 11px;
+                transform: translate(30px, 50%);
+            }
         }
     }
 }
@@ -277,6 +286,21 @@ input[type="number"] {
 
     &-slide {
         height: auto;
+
+        [data-fancybox] {
+            display: block;
+
+            img,
+            picture {
+                height: 100%;
+                object-fit: cover;
+                border-radius: 30px;
+
+                @media (max-width: 768px) {
+                    border-radius: 20px;
+                }
+            }
+        }
     }
 }
 
@@ -425,10 +449,20 @@ input[type="number"] {
     p {
         font-size: 20px;
         font-weight: 400;
+        margin-bottom: 1em;
 
         @media (max-width: 1024px) {
             font-size: 14px;
         }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 1em;
     }
 
     ul:has(li),
@@ -448,6 +482,7 @@ input[type="number"] {
         display: flex;
         flex-direction: column;
         gap: 5px;
+        margin-bottom: 1em;
 
         li {
             gap: 10px;
@@ -459,11 +494,29 @@ input[type="number"] {
             }
         }
     }
+    ul {
+        margin-bottom: 1em;
+    }
+
+    img,
+    picture {
+        border-radius: 30px;
+        height: auto;
+        width: 100%;
+
+        @media (max-width: 768px) {
+            border-radius: 20px;
+        }
+    }
 
     ._stroke-top {
         display: block;
         padding-top: 20px;
         border-top: 1px solid #cfe4f1;
+    }
+
+    &.max-1070 {
+        max-width: 1070px;
     }
 }
 
