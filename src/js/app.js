@@ -10,10 +10,12 @@ import { accorden } from "./static/accordeon.js";
 
 
 import { Fancybox } from "@fancyapps/ui";
+import { replaceDomElements } from "./static/replace.js";
 
 
 
 accorden();
+replaceDomElements();
 
 
 

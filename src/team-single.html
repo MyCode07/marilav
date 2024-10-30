@@ -5,7 +5,8 @@
 @@include('./html/header.html')
 
 <main>
-    <section class="section page-hero">
+
+    <section class="section page-hero" data-replace-width="768">
         <div class="section-bgi">
             <img src="img/about-hero.png" alt="">
         </div>
@@ -34,10 +35,102 @@
                         </li>
                     </ul>
                 </div>
-                
+
+                <div class="team-single" data-replace-old-position="afterbegin">
+                    <div class="img" data-replace-element>
+                        <img src="img/team-1.png" alt="">
+                    </div>
+
+                    <div class="team-single__text">
+                        <h1>Лаврентьева Мария Викторовна</h1>
+                        <p>Главный врач, косметолог, дерматолог</p>
+                        <div class="btns" data-replace-new-position="beforebegin">
+                            <button class="_btn _btn-stroke">
+                                <span>Получить консультацию</span>
+                                <svg width="6" height="9" viewBox="0 0 6 9">
+                                    <use xlink:href='img/svg/icons.svg#arrow' />
+                                </svg>
+                            </button>
+                            <button class="_btn _btn-main">
+                                <span>
+                                    Записаться на прием
+                                    <i>м. Некрасовка</i>
+                                </span>
+                                <svg width="6" height="9" viewBox="0 0 6 9">
+                                    <use xlink:href='img/svg/icons.svg#arrow' />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+
+    <section class="section team-text">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="section__top">
+                    <h2>Образование и опыт работы</h2>
+                </div>
+
+                <div class="text-box">
+                    <ol>
+                        <li>Тверская Государственная Медицинская Академия - 2012г. ТГМА Дерматовенерология (2013г.) РУДН
+                            Косметология (2013г.)</li>
+                        <li>Опыт работы с 2011 года, более 50 дипломов и сертификатов по своей специальности и курсов
+                            повышения
+                            квалификации</li>
+                        <li>Курсы повышения квалификации: ТГМА Косметология (2019 г.).</li>
+                    </ol>
+
+                    <iframe src="https://vk.com/video_ext.php?oid=337959966&amp;id=456239024&amp;hd=2&amp;autoplay=0"
+                        width="1000" height="562"
+                        allow="encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0"
+                        allowfullscreen=""></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section works">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="section__top">
+                    <h2>Сертификаты</h2>
+                </div>
+
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="img/service.png" data-fancybox="gallery">
+                                <img src="img/service.png" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="img/service.png" data-fancybox="gallery">
+                                <img src="img/service.png" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="img/service.png" data-fancybox="gallery">
+                                <img src="img/service.png" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="img/service.png" data-fancybox="gallery">
+                                <img src="img/service.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination"></div>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 @@include('./html/footer.html')

@@ -108,7 +108,8 @@
         }
 
         &._center {
-            text-align: center;justify-content: center;
+            text-align: center;
+            justify-content: center;
         }
     }
 
@@ -1209,22 +1210,6 @@
     }
 }
 
-.section {
-    // .section__container
-
-    &__container {
-    }
-
-    // .section__body
-
-    &__body {
-    }
-
-    // .section__top
-
-    &__top {
-    }
-}
 .faq {
     background-color: #f6fcff;
     @include adaptive-value("padding-top", 90, 40, 1);
@@ -1450,5 +1435,22 @@
 
     h3 {
         @include adaptive-value("font-size", 36, 24, 1);
+    }
+}
+
+.team-text {
+    ol {
+        & > :not(:last-child) {
+            @include adaptive-value("margin-bottom", 20, 12, 1);
+        }
+
+        li::marker {
+            color: $light-blue;
+            font-size: 1.5em;
+        }
+    }
+
+    iframe {
+        @include adaptive-value("margin-top", 60, 40, 1);
     }
 }

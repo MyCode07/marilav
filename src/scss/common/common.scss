@@ -138,6 +138,7 @@ input[type="number"] {
     align-items: center;
     justify-content: center;
     width: fit-content;
+    gap: 10px;
 
     text-align: center;
     font-size: 14px;
@@ -191,11 +192,9 @@ input[type="number"] {
             fill: currentColor;
             width: 12px;
             height: 15px;
-            margin-left: 10px;
 
             @media (max-width: 768px) {
                 height: 13px;
-                margin-left: 8px;
             }
         }
 
@@ -294,6 +293,14 @@ input[type="number"] {
             picture {
                 height: 100%;
                 object-fit: cover;
+            }
+        }
+    }
+
+    &._bordered {
+        [data-fancybox] {
+            img,
+            picture {
                 border-radius: 30px;
 
                 @media (max-width: 768px) {

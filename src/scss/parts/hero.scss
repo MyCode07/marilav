@@ -482,7 +482,7 @@
     .grid {
         @include adaptive-value("margin-top", 90, 60, 1);
 
-        @media (max-width:625px){
+        @media (max-width: 625px) {
             grid-template-columns: 1fr;
             gap: 47px;
         }
@@ -496,6 +496,103 @@ body:has(.page-hero + .page-hero__video) {
 
         @media (max-width: 768px) {
             padding: 20px 0 145px 0;
+        }
+    }
+}
+
+.team-single {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img {
+        height: 412px;
+        width: 300px;
+        flex: 0 0 auto;
+
+        border-radius: 30px;
+        background: linear-gradient(133deg, #1f4250 21.67%, #367a96 71.16%);
+        overflow: hidden;
+
+        img,
+        picture {
+            width: 95%;
+            margin-inline: auto;
+            height: 100%;
+            object-fit: contain;
+            object-position: bottom;
+        }
+
+        @media (max-width: 768px) {
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 600px) {
+            width: 164px;
+            height: 224px;
+        }
+    }
+
+    // .team-single__text
+
+    &__text {
+        max-width: 850px;
+
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1,
+        p {
+            color: $white;
+
+            @media (min-width: 769px) {
+                text-align: left !important;
+            }
+        }
+
+        p {
+            @include adaptive-value("margin-bottom", 65, 20, 1);
+        }
+
+        .btns {
+            display: flex;
+            gap: 15px;
+
+            @media (max-width: 1024px) {
+                flex-direction: column;
+            }
+        }
+
+        ._btn {
+            @include adaptive-value("height", 84, 63, 1);
+            width: 100%;
+            @include adaptive-value("font-size", 20, 16, 1);
+            color: $white;
+
+            @media (min-width: 1025px) {
+                max-width: 370px;
+            }
+
+            &-strkoe {
+                background-color: rgba($color: $white, $alpha: 0.5);
+            }
+
+            i {
+                font-style: normal;
+                @include adaptive-value("font-size", 16, 14, 1);
+                display: block;
+                text-transform: capitalize;
+                text-align: left;
+            }
         }
     }
 }
