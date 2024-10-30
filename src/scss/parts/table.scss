@@ -1,0 +1,104 @@
+.table {
+    // .table-tables
+
+    &-tables {
+        table {
+            &:not(:last-child) {
+                @include adaptive-value("margin-bottom", 90, 40, 1);
+            }
+        }
+    }
+
+    table {
+        width: 100%;
+        text-align: left;
+
+        thead {
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        tr {
+            @media (max-width: 768px) {
+                display: grid;
+                grid-template-columns: 1fr 20%;
+                gap: 0 10px;
+                border-bottom: 1px solid #eef1f3;
+
+                & > :nth-last-child(2) {
+                    text-align: right;
+                }
+
+                &:first-child {
+                    border-top: 1px solid #eef1f3;
+                }
+            }
+
+            th {
+                @include adaptive-value("font-size", 20, 14, 1);
+                color: $gray;
+                font-weight: 400;
+            }
+
+            td,
+            th {
+                padding: 16px 0;
+                @media (min-width: 769px) {
+                    border-bottom: 1px solid #eef1f3;
+                }
+            }
+
+            td {
+                @include adaptive-value("font-size", 24, 16, 1);
+                font-weight: 400;
+
+                &:last-child {
+                    @media (max-width: 768px) {
+                        display: inline-block;
+                        padding-top: 0;
+                    }
+                }
+
+                &:nth-last-child(2) {
+                    color: $light-blue;
+                    white-space: nowrap;
+                    font-weight: 500;
+                }
+            }
+
+            p {
+                font-weight: 400;
+            }
+
+            ._btn {
+                max-width: 235px;
+                margin-left: auto;
+
+                @include adaptive-value("font-size", 18, 13, 1);
+                @include adaptive-value("height", 70, 40, 1);
+
+                @media (max-width: 768px) {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+.has-code {
+    table {
+        tr {
+            td {
+                &:first-child {
+                    @include adaptive-value('font-size', 18, 16, 1);
+                    color: $dark-blue;
+                    
+                    @media (max-width: 1024px) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
