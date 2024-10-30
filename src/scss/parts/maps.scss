@@ -1,0 +1,136 @@
+.contact-maps {
+    .tabs {
+        margin-inline: auto;
+        @include adaptive-value("margin-bottom", 60, 40, 1);
+    }
+
+    // .contact-maps__map
+
+    &__map {
+        position: relative;
+
+        iframe {
+            @media (min-width: 769px) {
+                height: 690px !important;
+            }
+        }
+    }
+
+    // .contact-maps__metro
+
+    &__metro {
+        @include adaptive-value("margin-top", 90, 40, 1);
+    }
+
+    .frame {
+        @media (min-width: 769px) {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            bottom: 30px;
+
+            padding: 40px 30px;
+            border-radius: 20px;
+            background-color: $white;
+            max-width: 475px;
+            width: 100%;
+        }
+
+        @media (max-width: 1024px) {
+            max-width: 400px;
+        }
+
+        @media (max-width: 768px) {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h3 {
+            font-size: 32px;
+            @include adaptive-value("font-size", 32, 26, 1);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.64px;
+            margin-bottom: 27px;
+        }
+
+        // .frame-item
+
+        &-item {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            margin-bottom: 30px;
+
+            @media (max-width: 768px) {
+                margin-bottom: 20px;
+            }
+
+            div {
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                background-color: #367a96;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex: 0 0 auto;
+
+                svg,
+                img {
+                    flex: 0 0 auto;
+                    width: 16px;
+                    height: 16px;
+                    object-fit: contain;
+                    fill: $white;
+                }
+            }
+
+            p {
+                font-weight: 400;
+                color: $dark-blue;
+
+                label {
+                    display: block;
+                    @include adaptive-value("font-size", 21, 16, 1);
+                    color: $gray;
+                }
+            }
+
+            &[href^="mailto"] p {
+                color: $light-blue;
+            }
+        }
+
+        // .frame-cosials
+
+        &-cosials {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            span {
+                @include adaptive-value("font-size", 21, 16, 1);
+                color: $dark-blue;
+            }
+        }
+
+        ._btn {
+            margin-bottom: 30px;
+            width: 100%;
+            @include adaptive-value("height", 83, 67, 1);
+
+            @media (max-width: 768px) {
+                margin-bottom: 20px;
+            }
+        }
+
+        ._social {
+        }
+    }
+}

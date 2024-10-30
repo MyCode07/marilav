@@ -91,12 +91,43 @@
         tr {
             td {
                 &:first-child {
-                    @include adaptive-value('font-size', 18, 16, 1);
+                    @include adaptive-value("font-size", 18, 16, 1);
                     color: $dark-blue;
-                    
+
                     @media (max-width: 1024px) {
                         display: none;
                     }
+                }
+            }
+        }
+    }
+}
+
+.details {
+    table {
+        tr {
+            @include adaptive-value("font-size", 24, 16, 1);
+
+            & > :first-child {
+                font-weight: 500;
+                width: 36%;
+                padding-right: 20px;
+
+                @media (max-width: 768px) {
+                    padding-right: 10px;
+                    width: 40%;
+                }
+            }
+
+            td {
+                vertical-align: baseline;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #eef1f3;
+
+                @media (max-width: 768px) {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
                 }
             }
         }

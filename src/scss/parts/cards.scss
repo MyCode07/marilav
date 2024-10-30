@@ -323,6 +323,7 @@
 
     position: relative;
     overflow: hidden;
+    display: block;
 
     @media (any-hover: hover) {
         &:hover {
@@ -405,5 +406,31 @@
 
     &__text {
         padding: 20px 30px 15px 30px;
+    }
+}
+
+.licens-item {
+    img,
+    picture {
+        object-fit: contain;
+    }
+
+    label {
+        display: block;
+        color: $gray;
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: -0.4px;
+
+        @include adaptive-value("font-size", 20, 16, 1);
+
+        @include adaptive-value("margin-top", 50, 14, 1);
+        @include adaptive-value("margin-bottom", 50, 14, 1);
+    }
+
+    ._btn {
+        @include adaptive-value("height", 70, 47, 1);
+        @include adaptive-value("font-size", 18, 13, 1);
+        width: 90%;
     }
 }

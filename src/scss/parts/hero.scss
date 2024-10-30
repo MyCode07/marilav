@@ -394,6 +394,10 @@
     background: linear-gradient(133deg, #1f4250 21.67%, #367a96 71.16%), #306a81;
     overflow: hidden;
 
+    @media (min-width: 769px) {
+        min-height: 500px;
+    }
+
     @media (max-width: 768px) {
         padding: 20px 0 40px 0;
         border-radius: 0px 0px 20px 20px;
@@ -404,7 +408,7 @@
     }
 
     .breadcrumbs {
-        @include adaptive-value("margin-bottom", 104, 30, 1);
+        @include adaptive-value("margin-bottom", 60, 30, 1);
     }
 
     h1 {
@@ -425,6 +429,8 @@
 
     .section__body > p {
         @include adaptive-value("margin-bottom", 65, 20, 1);
+        max-width: 1050px;
+        margin-inline: auto;
     }
 
     .section__body > label {
