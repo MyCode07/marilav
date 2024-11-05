@@ -328,6 +328,15 @@ input[type="number"] {
             width: 100%;
         }
 
+        &._center {
+            justify-content: center;
+            margin-inline: auto;
+        }
+
+        &._mb {
+            @include adaptive-value("margin-bottom", 90, 40, 1);
+        }
+
         button {
             display: flex;
             align-items: center;
@@ -378,7 +387,6 @@ input[type="number"] {
 }
 
 .breadcrumbs {
-
     @media (max-width: 1024px) {
         padding: 15px 0;
     }

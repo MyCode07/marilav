@@ -43,9 +43,18 @@
 
             td,
             th {
-                padding: 16px 0;
+                padding: 16px;
+
                 @media (min-width: 769px) {
                     border-bottom: 1px solid #eef1f3;
+                }
+
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                @media (max-width: 768px) {
+                    padding: 16px 0;
                 }
             }
 
@@ -54,6 +63,8 @@
                 font-weight: 400;
 
                 &:last-child {
+                    padding-right: 0;
+
                     @media (max-width: 768px) {
                         display: inline-block;
                         padding-top: 0;

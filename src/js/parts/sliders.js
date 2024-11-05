@@ -77,7 +77,6 @@ if (sliders.length) {
                     300: {
                         slidesPerView: 2,
                         spaceBetween: 8,
-
                     },
                     769: {
                         slidesPerView: 3,

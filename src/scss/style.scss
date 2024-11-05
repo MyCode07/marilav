@@ -77,10 +77,6 @@
     max-width: 400px;
     border: 1px solid;
 
-    .open {
-        display: none;
-    }
-
     &._active {
         .open {
             display: block;
@@ -93,6 +89,10 @@
         }
     }
 
+    .open {
+        display: none;
+    }
+
     button {
         font-size: 12px;
         padding: 5px;
@@ -100,6 +100,10 @@
         background-color: $dark-blue;
         width: 100%;
         display: block;
+
+        * {
+            pointer-events: none;
+        }
     }
 
     ul {

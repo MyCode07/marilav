@@ -111,6 +111,12 @@
             text-align: center;
             justify-content: center;
         }
+
+        &._small {
+            h2 {
+                @include adaptive-value("font-size", 50, 20, 1);
+            }
+        }
     }
 
     // .section__bottom
@@ -335,6 +341,7 @@
     .tabs {
         margin-bottom: 40px;
         margin-left: 18%;
+
         @media (max-width: 1024px) {
             margin-bottom: 24px;
             margin-inline: auto;
@@ -697,6 +704,8 @@
 }
 
 .team {
+    overflow: hidden;
+
     // .team__box
 
     &__box {
@@ -990,6 +999,7 @@
         justify-content: space-between;
 
         position: relative;
+        max-width: 900px;
 
         @media (max-width: 768px) {
             flex-direction: column;
@@ -1465,4 +1475,8 @@
     iframe {
         @include adaptive-value("margin-top", 60, 40, 1);
     }
+}
+
+._mb0 {
+    margin-bottom: 0 !important;
 }

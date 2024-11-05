@@ -40,7 +40,7 @@
             }
         }
 
-        ._btn{
+        ._btn {
             font-size: 14px;
         }
     }
@@ -141,8 +141,133 @@
         nav {
             width: 100%;
 
+            li {
+                @media (any-hover: hover) {
+                    &:hover {
+                        & > ul {
+                            opacity: 1;
+                            pointer-events: all;
+                        }
+                    }
+                }
+
+                &[data-open] {
+                    & > ul {
+                        opacity: 1;
+                        pointer-events: all;
+                    }
+                }
+            }
+
+            & > ul {
+                position: relative;
+
+                & > li {
+                    position: relative;
+
+                    & > ul {
+                        top: calc(100% + 30px);
+                        left: 0;
+
+                        &:before {
+                            position: absolute;
+                            content: "";
+                            left: 0;
+                            top: 0;
+                            height: 60px;
+                            width: 100%;
+                            
+                            transform: translate(0, -50%);
+                            z-index: -1;
+                        }
+                    }
+
+                    ul {
+                        position: absolute;
+                        z-index: 2;
+                        min-width: 180px;
+                        max-width: 200px;
+
+                        padding: 20px;
+                        border-radius: 10px;
+                        background-color: #2d5d70;
+
+                        opacity: 0;
+                        pointer-events: none;
+
+                        li {
+                            padding: 6px 0;
+                            background-color: #2d5d70;
+
+                            border-bottom: 1px solid #3f7489;
+
+                            a {
+                                color: $white;
+                            }
+
+                            button {
+                                width: 12px;
+                                height: 12px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex: 0 0 auto;
+
+                                img,
+                                svg {
+                                    flex: 0 0 auto;
+                                    fill: $white;
+                                    transform: rotate(-90deg);
+                                }
+                            }
+
+                            ul {
+                                top: 0;
+                                left: calc(100% + 5px);
+
+                                &:before {
+                                    position: absolute;
+                                    content: "";
+                                    left: 0;
+                                    top: 0;
+                                    width: 60px;
+                                    height: 100%;
+                                    
+                                    transform: translate(-50%, 0);
+                                    z-index: -1;
+                                }
+                            }
+
+                            @media (any-hover: hover) {
+                                &:hover {
+                                    & > button {
+                                        img,
+                                        svg {
+                                            transform: rotate(-90deg);
+                                        }
+                                    }
+                                }
+                            }
+
+                            &[data-open] {
+                                & > button {
+                                    img,
+                                    svg {
+                                        transform: rotate(-90deg);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
             ul {
                 li {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
                     a {
                         color: $gray;
                         font-size: 19px;
@@ -156,16 +281,33 @@
                                 opacity: 0.5;
                             }
 
-                            button {
+                            & > button {
                                 img,
                                 svg {
                                     transform: rotate(180deg);
                                 }
                             }
 
-                            .div {
+                            & > ul {
                                 pointer-events: all;
                             }
+                        }
+                    }
+
+                    &[data-open] {
+                        & > a {
+                            opacity: 0.5;
+                        }
+
+                        & > button {
+                            img,
+                            svg {
+                                transform: rotate(180deg);
+                            }
+                        }
+
+                        & > ul {
+                            pointer-events: all;
                         }
                     }
 
@@ -201,122 +343,6 @@
 
                 & > :last-child {
                     grid-column-start: 2;
-                }
-
-                & > li {
-                    display: flex;
-                    position: relative;
-
-                    a {
-                        white-space: nowrap;
-                        display: flex;
-                        align-self: center;
-                    }
-
-                    &[data-open] {
-                        & > a {
-                            color: #136b8a;
-                        }
-                        button {
-                            img,
-                            svg {
-                                transform: rotate(-180deg);
-                                fill: #136b8a;
-                            }
-                        }
-
-                        div {
-                            overflow: visible;
-                            opacity: 1;
-                            pointer-events: all;
-                            visibility: visible;
-                            max-height: fit-content;
-                            height: auto;
-                        }
-                    }
-
-                    &:nth-child(n + 4) {
-                        & > div {
-                            left: unset;
-                            right: 0;
-                        }
-                    }
-
-                    & > div {
-                        display: flex;
-                        gap: 5px;
-
-                        position: absolute;
-                        top: 30px;
-                        left: 0;
-                        width: fit-content;
-                        height: auto;
-
-                        pointer-events: none;
-                        height: 0;
-                        overflow: hidden;
-                        z-index: 2;
-
-                        & > ul {
-                            display: flex;
-                            flex-direction: column;
-                            gap: 6px;
-                            padding: 20px;
-                            border-radius: 10px;
-                            background-color: #2d5d70;
-                            width: 250px;
-
-                            & > li {
-                                position: relative;
-                                padding-bottom: 6px;
-                                width: 100%;
-                                border-bottom: 1px solid #3f7489;
-
-                                button {
-                                    margin-left: auto;
-                                }
-
-                                a {
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: space-between;
-                                    width: 100%;
-                                    gap: 10px;
-                                    white-space: wrap;
-                                    color: $white;
-
-                                    svg,
-                                    img {
-                                        fill: currentColor;
-                                        width: 12px;
-                                        height: 12px;
-                                        flex: 0 0 auto;
-                                    }
-                                }
-
-                                & > div {
-                                    height: auto;
-                                    pointer-events: none;
-                                    height: 0;
-                                    overflow: hidden;
-                                    grid-column: span 2;
-
-                                    & > ul {
-                                        display: flex;
-                                        flex-direction: column;
-                                        gap: 10px;
-                                        padding-left: 15px;
-
-                                        li {
-                                            a {
-                                                white-space: wrap;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             }
         }
@@ -382,8 +408,7 @@
                 width: 24px;
                 height: 24px;
                 flex: 0 0 auto;
-                fill: #A8B9BF;
-
+                fill: #a8b9bf;
             }
         }
 
@@ -395,12 +420,17 @@
             justify-content: center;
             border-radius: 50%;
             transition: all 0.3s ease 0s;
+            cursor: pointer;
+
+            * {
+                pointer-events: none;
+            }
 
             img,
             svg {
                 flex: 0 0 auto;
                 pointer-events: none;
-                fill: #A8B9BF;
+                fill: #a8b9bf;
             }
 
             &._open {

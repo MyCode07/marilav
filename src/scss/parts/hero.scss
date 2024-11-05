@@ -126,13 +126,13 @@
         }
 
         p {
-            margin-top: 24px;
             color: rgba($color: $white, $alpha: 0.6);
             @include adaptive-value("font-size", 30, 16, 1);
             font-style: normal;
             font-weight: 400;
             line-height: 1.1;
             letter-spacing: -0.6px;
+            margin: 24px 0 30px 0;
 
             @media (min-width: 1025px) {
                 flex: 1 1 auto;
@@ -601,4 +601,8 @@ body:has(.page-hero + .page-hero__video) {
             }
         }
     }
+}
+
+.home-page section.hero {
+    margin-top: 0 !important;
 }

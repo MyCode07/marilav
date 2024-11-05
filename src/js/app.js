@@ -1,4 +1,4 @@
-// import { maskInputs } from "./static/inputmask.js";
+import { maskInputs } from "./static/inputmask.js";
 import "./parts/sliders.js";
 import "./parts/tabs.js";
 // import "./parts/show-more.js";
@@ -20,7 +20,7 @@ replaceDomElements();
 
 
 // stickyHeader();
-// maskInputs('+7 (999) 999-99-99', '._mask-phone')
+maskInputs('+7 (999) 999-99-99', '._mask-phone')
 // animateAction();
 // animateStaggerAction();
 
@@ -30,6 +30,9 @@ Fancybox.bind("[data-fancybox]", {
         },
     },
 });
+
+import "./pages.js";
+
 
 // const inputItems = [...document.querySelectorAll('input ')].concat([...document.querySelectorAll('textarea ')])
 // if (inputItems.length) {
