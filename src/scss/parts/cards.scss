@@ -224,6 +224,7 @@
     // .team-card__image
 
     &__image {
+        display: block;
         border-radius: 30px;
         @include adaptive-value("height", 412, 224, 1);
         overflow: hidden;
@@ -273,6 +274,14 @@
         @media (max-width: 1024px) {
             font-size: 16px;
         }
+    }
+
+    ._btn {
+        width: 100%;
+        @include adaptive-value("height", 70, 47, 1);
+        @include adaptive-value("margin-top", 40, 20, 1);
+
+        @include adaptive-value("font-size", 18, 13, 1);
     }
 }
 

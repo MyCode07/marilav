@@ -429,12 +429,13 @@ input[type="number"] {
             a {
                 color: $white;
             }
+        }
 
-            svg {
-                width: 6px;
-                height: 6px;
-                fill: rgba($color: $white, $alpha: 0.42);
-            }
+        svg {
+            flex: 0 0 auto;
+            width: 6px;
+            height: 6px;
+            fill: rgba($color: $white, $alpha: 0.42);
         }
     }
 }

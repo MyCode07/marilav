@@ -733,6 +733,12 @@
             overflow: visible;
         }
     }
+
+    .grid-4 {
+        @media (max-width: 768px) {
+            gap: 30px 10px;
+        }
+    }
 }
 
 .consultation {
@@ -1479,4 +1485,21 @@
 
 ._mb0 {
     margin-bottom: 0 !important;
+}
+
+.certs {
+    .swiper-slide a {
+        height: 100%;
+
+        img,
+        picture {
+            object-fit: contain;
+        }
+    }
+}
+
+.works {
+    .swiper-slide a {
+        height: 100%;
+    }
 }
