@@ -106,9 +106,6 @@ p {
     }
 }
 
-._btn {
-}
-
 figure,
 img,
 svg,
@@ -155,14 +152,16 @@ input[type="number"] {
     span {
         position: relative;
         top: 1px;
+        pointer-events: none;
     }
 
     img,
     svg {
-        width: 16px;
-        height: 16px;
+        width: 12px;
+        height: 15px;
         flex: 0 0 auto;
         fill: currentColor;
+        pointer-events: none;
     }
 
     // ._btn-stroke
@@ -394,7 +393,7 @@ input[type="number"] {
     .breadcrumb {
         display: flex;
         align-items: center;
-        gap: 5px;
+        gap: 11px;
         overflow-y: auto;
 
         &::-webkit-scrollbar {
@@ -404,7 +403,7 @@ input[type="number"] {
         li {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 11px;
 
             font-size: 15px;
             font-weight: 500;
@@ -429,9 +428,14 @@ input[type="number"] {
             a {
                 color: $white;
             }
+
+            &:last-child {
+                opacity: 0.5;
+            }
         }
 
-        svg {
+        svg,
+        img {
             flex: 0 0 auto;
             width: 6px;
             height: 6px;
@@ -608,7 +612,6 @@ iframe {
 .prev {
     svg,
     img {
-        transform: rotate(-180deg);
         margin-left: -2px;
     }
 }
@@ -617,5 +620,66 @@ iframe {
     svg,
     img {
         margin-left: 2px;
+    }
+}
+
+ul.page-numbers {
+    margin-inline: auto;
+    @include adaptive-value("margin-top", 60, 40, 1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    li {
+        flex: 0 0 auto;
+
+        & > a,
+        & > span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-wrap: wrap;
+
+            width: 50px;
+            height: 50px;
+            @include adaptive-value("font-size", 18, 14, 1);
+            font-weight: 500;
+
+            background-color: $light-blue;
+            color: $white;
+            border-radius: 50%;
+            border: 1px solid $light-blue;
+
+            transition: all 0.3s ease 0s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $light-blue;
+                    background-color: $white;
+                }
+            }
+
+            @media (max-width: 768px) {
+                width: 40px;
+                height: 40px;
+            }
+
+            &.current {
+                background-color: $white;
+                color: $light-blue;
+            }
+        }
+
+        img,
+        svg {
+            width: 10px;
+
+            @media (max-width: 768px) {
+                width: 8px;
+            }
+        }
     }
 }

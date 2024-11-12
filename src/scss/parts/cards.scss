@@ -29,6 +29,7 @@
         @include adaptive-value("font-size", 24, 16, 1);
         line-height: 1.2;
         letter-spacing: -0.48px;
+        font-weight: 400;
     }
 }
 
@@ -151,6 +152,7 @@
 
     &__logo {
         height: 30px;
+        object-fit: contain;
 
         @media (max-width: 1024px) {
             height: 25px;
@@ -179,12 +181,16 @@
 
         div {
             display: flex;
+
             svg,
             img {
                 display: block;
-                width: 17px;
-                height: 17px;
+                width: 120px;
                 object-fit: contain;
+
+                @media (max-width: 768px) {
+                    width: 116px;
+                }
             }
         }
     }
@@ -430,9 +436,15 @@
 }
 
 .licens-item {
+    display: flex !important;
+    flex-direction: column;
+    height: 100%;
+
     img,
     picture {
         object-fit: contain;
+        flex: 1 1 auto;
+        display: block;
     }
 
     label {

@@ -1,172 +1,148 @@
-// .popup {
-//     position: fixed;
-//     left: 0;
-//     top: 0;
-//     width: 100%;
-//     height: 100%;
-//     z-index: 16;
-//     overflow-y: auto;
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 16;
 
-//     background: rgba($color: $black, $alpha: 0.75);
+    background-color: rgba($color: $dark-blue, $alpha: 0.6);
 
-//     padding: 30px;
-//     transition: opacity 0.3s ease 0s;
+    @media (min-width: 769px) {
+        padding-inline: 20px;
+        overflow-y: auto;
 
-//     opacity: 0;
-//     pointer-events: none;
+        @include adaptive-value("padding-top", 170, 100, 1);
+        @include adaptive-value("padding-bottom", 100, 60, 1);
+    }
 
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
+    pointer-events: none;
+    opacity: 0;
 
-//     @media (max-width: 1024px) {
-//         padding: 10px;
-//     }
+    &._open {
+        pointer-events: all;
+        opacity: 1;
+    }
 
-//     &._open {
-//         opacity: 1;
-//         pointer-events: all;
-//     }
+    // .popup__body
 
-//     // .popup__body
+    &__body {
+        padding: 65px 47px;
+        background-color: $white;
+        border-radius: 30px;
+        width: 630px;
+        margin-inline: auto;
+        position: relative;
 
-//     &__body {
-//         margin-inline: auto;
-//         background-color: $white;
+        @media (max-width: 768px) {
+            width: 100%;
+            height: 100%;
+            padding: 20px 20px 30px 20px;
+            overflow-y: auto;
+            border-radius: 0;
+        }
+    }
 
-//         max-width: 725px;
+    // .popup__close
 
-//         padding: 30px;
-//         border-radius: 20px;
+    &__close {
+        @media (min-width: 769px) {
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform: translate(0, calc(-100% - 10px));
+        }
 
-//         @media (max-width: 768px) {
-//             padding: 15px 10px;
-//             border-radius: 10px;
-//         }
-//     }
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #367a96;
+        margin-left: auto;
 
-//     // .popup__top
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-//     &__top {
-//         display: flex;
-//         align-items: center;
-//         justify-content: space-between;
-//         margin-bottom: 30px;
+        @media (max-width: 768px) {
+            margin: 0 0 20px auto;
+        }
 
-//         @media (max-width: 768px) {
-//             margin-bottom: 20px;
-//         }
+        img,
+        svg {
+            width: 17px;
+            height: 17px;
+            flex: 0 0 auto;
+            stroke: $white;
+            pointer-events: none;
+            transition: all 0.3s ease 0s;
+        }
 
-//         h2 {
-//             @include adaptive-value("font-size", 30, 20, 1);
-//             text-transform: unset;
-//         }
-//     }
+        @media (any-hover: hover) {
+            &:hover {
+                img,
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
 
-//     // .popup__close
+    // .popup__top
 
-//     &__close {
-//         width: 50px;
-//         height: 50px;
-//         border-radius: 50%;
+    &__top {
+        @include adaptive-value("margin-bottom", 37, 20, 1);
 
-//         @media (max-width: 768px) {
-//             width: 40px;
-//             height: 40px;
-//         }
+        h2 {
+            text-align: center;
+            @include adaptive-value("font-size", 44, 24, 1);
+        }
 
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//         border: 2px solid $gray;
+        p {
+            text-align: center;
+            @include adaptive-value("margin-top", 37, 20, 1);
+            @include adaptive-value("font-size", 20, 16, 1);
 
-//         img,
-//         svg {
-//             width: 16px;
-//             flex: 0 0 auto;
-//             stroke: currentColor;
-//             stroke-width: 2px;
-//             pointer-events: none;
+            color: $gray;
+            font-weight: 400;
 
-//             @media (max-width: 768px) {
-//                 width: 13px;
-//             }
-//         }
-//     }
-// }
+            b,
+            strong {
+                color: $dark-blue;
+            }
+        }
 
-// .search {
-//     position: fixed;
-//     left: 0;
-//     top: 0;
-//     width: 100%;
-//     height: 100vh;
-//     z-index: 16;
-//     overflow-y: auto;
-//     background-color: rgba($color: $black, $alpha: 0.5);
+        img {
+            width: 77px;
+            height: 77px;
+            margin-inline: auto;
+            margin-bottom: 10px;
+        }
 
-//     transition: opacity 0.3s ease 0s;
+        ._btn {
+            margin-inline: auto;
+            @include adaptive-value("height", 83, 67, 1);
+            width: 260px;
 
-//     opacity: 0;
-//     pointer-events: none;
+            @include adaptive-value("margin-top", 37, 20, 1);
+        }
+    }
 
-//     &._open {
-//         opacity: 1;
-//         pointer-events: all;
-//     }
+    .form {
+        // .form__item
 
-//     // .search-form
+        &__item {
+        }
 
-//     &-form {
-//         display: flex;
-//         align-items: center;
-//         margin-left: auto;
-//         margin-right: auto;
-//         max-width: 808px;
-//         position: relative;
-//         overflow: hidden;
+        // .form__bottom
 
-//         border: 1px solid $light-gray;
-//         border-radius: 8px;
-//         color: $black;
-//         background-color: #f4f6f9;
-//         padding-right: 16px;
+        &__bottom {
+        }
+    }
 
-//         input {
-//             height: 48px;
-//             padding: 16px;
-//             width: 100%;
-//         }
+    ._btn {
+        // ._btn-main
 
-//         input[type="search"]::-webkit-search-cancel-button {
-//             -webkit-appearance: none;
-//         }
-
-//         .delete {
-//             flex: 0 0 auto;
-//             width: 10px;
-//             height: 10px;
-//             opacity: 0.54;
-//             margin-right: 25px;
-//         }
-
-//         .submit {
-//             flex: 0 0 auto;
-//             width: 16px;
-//             height: 16px;
-//         }
-//     }
-
-//     // .search__body
-
-//     &__body {
-//         background-color: $white;
-//         padding: 20px 0;
-//         height: fit-content;
-//         width: 100%;
-
-//         @media (max-width: 1024px) {
-//             padding: 20px;
-//         }
-//     }
-// }
+        &-main {
+        }
+    }
+}

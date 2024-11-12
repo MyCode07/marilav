@@ -1,6 +1,7 @@
 .footer {
     padding-top: 90px;
     padding-bottom: 60px;
+    position: relative;
 
     @media (max-width: 1024px) {
         padding-top: 40px;
@@ -52,6 +53,7 @@
         .tel {
             white-space: nowrap;
             @include adaptive-value("font-size", 64, 40, 1);
+            margin-top: -0.1em;
 
             display: block;
 
@@ -79,7 +81,18 @@
     // .footer__hart
 
     &__hart {
-        display: none;
+        position: absolute;
+        left: 0;
+        top: 278px;
+        width: auto;
+
+        @media (max-width: 1440px) {
+            left: -70px;
+        }
+
+        @media (max-width: 1024px) {
+            display: none;
+        }
     }
 
     // .footer__logo

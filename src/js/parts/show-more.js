@@ -1,10 +1,10 @@
-const btnsMore = document.querySelectorAll('.show-hidden-acordeon');
+const prices = document.querySelectorAll('.price-table');
 
-if (btnsMore.length) {
-    btnsMore.forEach(btn => {
-        const acordeon = btn.nextElementSibling
+if (prices.length) {
+    prices.forEach(price => {
+        const btn = price.querySelector('.show-more');
 
-        if (acordeon) {
+        if (btn) {
             btn.addEventListener('click', () => {
                 btn.classList.toggle('_active')
 
@@ -15,7 +15,7 @@ if (btnsMore.length) {
                     btn.textContent = btn.dataset.textShow
                 }
 
-                acordeon.classList.toggle('_active')
+                price.classList.toggle('_active')
             })
         }
     })

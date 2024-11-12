@@ -325,6 +325,7 @@
         flex-direction: column;
         align-items: center;
         width: fit-content;
+        gap: 4px;
 
         @media (max-width: 1024px) {
             display: none;
@@ -334,15 +335,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 24px;
-            height: 24px;
+            width: 14px;
+            height: 14px;
+            background-color: unset;
 
-            svg {
+            svg,
+            img {
+                width: 100%;
+                height: 100%;
                 fill: $white;
             }
 
             &.prev {
-                transform: rotate(180deg);
+                margin-bottom: 4px;
+
+                img,
+                svg {
+                    transform: rotate(180deg);
+                }
             }
         }
     }
@@ -459,6 +469,7 @@
         }
     }
 
+    .section__body > ._btn-label ._btn,
     .section__body > ._btn {
         margin-inline: auto;
         @include adaptive-value("height", 84, 63, 1);
