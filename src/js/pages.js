@@ -9,3 +9,4 @@ document.addEventListener('click', function (e) {
         document.querySelector('.pages-menu').classList.add('_active')
     }
 })
+

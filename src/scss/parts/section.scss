@@ -349,6 +349,10 @@
         margin-bottom: 40px;
         margin-left: 18%;
 
+        @media (min-width: 1025px) {
+            margin-left: 25.427% !important;
+        }
+
         @media (max-width: 1024px) {
             margin-bottom: 24px;
             margin-inline: auto;

@@ -6,6 +6,7 @@ import "./parts/popup.js";
 import "./parts/menu.js";
 import "./parts/search.js";
 import { accorden } from "./static/accordeon.js";
+import { stickyHeader } from "./parts/header.js";
 
 
 
@@ -19,7 +20,7 @@ replaceDomElements();
 
 
 
-// stickyHeader();
+stickyHeader();
 maskInputs('+7 (999) 999-99-99', '._mask-phone')
 // animateAction();
 // animateStaggerAction();
@@ -50,5 +51,4 @@ import "./pages.js";
 //         }
 //     })
 // }
-
 
