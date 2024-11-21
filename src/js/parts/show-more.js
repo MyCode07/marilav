@@ -20,3 +20,27 @@ if (prices.length) {
         }
     })
 }
+
+const serviceTexts = document.querySelectorAll('.service-text');
+
+if (serviceTexts.length) {
+    serviceTexts.forEach(item => {
+        const btn = item.querySelector('.show-more');
+        const text = item.querySelector('.text-box');
+
+        if (btn) {
+            btn.addEventListener('click', () => {
+                btn.classList.toggle('_active')
+
+                if (btn.classList.contains('_active')) {
+                    btn.querySelector('span').textContent = btn.dataset.textHide
+                }
+                else {
+                    btn.querySelector('span').textContent = btn.dataset.textShow
+                }
+
+                text.classList.toggle('_active')
+            })
+        }
+    })
+}
