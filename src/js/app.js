@@ -12,7 +12,7 @@ import { stickyHeader } from "./parts/header.js";
 
 import { Fancybox } from "@fancyapps/ui";
 import { replaceDomElements } from "./static/replace.js";
-
+import './static/before-after.js'
 
 
 accorden();

@@ -409,14 +409,14 @@
 
             svg {
                 fill: currentColor;
-                width: 45px;
-                height: 45px;
+                width: 30px;
+                height: 36px;
 
                 transition: all 0.3s ease 0s;
 
                 @media (max-width: 1024px) {
-                    width: 32px;
-                    height: 32px;
+                    width: 21px;
+                    height: 25px;
                 }
             }
         }

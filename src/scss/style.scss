@@ -46,6 +46,9 @@
 // load animations
 @import "common/animations";
 
+// load before-after-iamge
+@import "common/before-after-iamge";
+
 // load form
 @import "common/form";
 
@@ -66,6 +69,9 @@
 
 // load section
 @import "parts/maps";
+
+// load extra
+@import "parts/extra";
 
 .pages-menu {
     position: fixed;

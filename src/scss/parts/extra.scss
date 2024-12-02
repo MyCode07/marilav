@@ -1,0 +1,63 @@
+body {
+    .yButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        width: 130px !important;
+        height: 130px !important;
+
+        @media (max-width: 1024px) {
+            width: 73px !important;
+            height: 73px !important;
+        }
+
+        .yButtonBackground {
+            width: 130px !important;
+            height: 130px !important;
+            background: linear-gradient(90deg, #1aacdf 0%, #2dc5fa 100%) !important;
+            opacity: 1 !important;
+
+            @media (max-width: 1024px) {
+                width: 73px !important;
+                height: 73px !important;
+            }
+        }
+
+        .yButtonWave {
+            color: $light-blue !important;
+        }
+
+        &:before {
+            display: block;
+            content: "";
+            width: 22px;
+            height: 22px;
+            background-image: url("@img/icons/yclients.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 1;
+            margin-bottom: 2px;
+
+            @media (max-width: 1204px) {
+                width: 34px;
+                height: 34px;
+            }
+        }
+
+        .yButtonText {
+            position: relative !important;
+            top: 0 !important;
+            left: 0 !important;
+            font-family: inherit !important;
+            font-size: 19px !important;
+            line-height: 1.1 !important;
+            font-weight: 400 !important;
+
+            @media (max-width: 1024px) {
+                display: none !important;
+            }
+        }
+    }
+}

@@ -56,6 +56,10 @@ if (submenuList.length) {
         const submenu = li.querySelector('ul');
         const link = li.querySelector('a');
 
+        if (link.getAttribute('href') == '/#mainservices') {
+            link.insertAdjacentHTML('afterend', arrow);
+        }
+
         if (submenu) {
             link.insertAdjacentHTML('afterend', arrow);
             const btn = li.querySelector('button');
@@ -92,6 +96,9 @@ if (submenuList.length) {
 
 
 
+const serviceMenu = document.querySelector('.menu-service');
+const serviceMenulink = document.querySelector('.header__bottom [href="/#mainservices"]');
+
 document.addEventListener('click', function (e) {
     let targetEl = e.target;
 
@@ -106,14 +113,71 @@ document.addEventListener('click', function (e) {
     if (!targetEl.closest('header__lang') && !targetEl.classList.contains('header__lang') && document.querySelector('.header__lang._active')) {
         document.querySelector('.header__lang._active').classList.remove('_active')
     }
+
+
+    if (targetEl.closest('.header__bottom')) {
+        if (targetEl.hasAttribute('href') && targetEl.getAttribute('href') == '/#mainservices') {
+            e.preventDefault();
+            const li = targetEl.closest('li')
+            li.classList.toggle('_active');
+            serviceMenu.classList.toggle('_open');
+        }
+
+        if (targetEl.closest('li') && targetEl.tagName == 'BUTTON' && targetEl.closest('li').querySelector('[href="/#mainservices"]')) {
+            const li = targetEl.closest('li')
+            li.classList.toggle('_active');
+            serviceMenu.classList.toggle('_open');
+        }
+    }
+
+    if (targetEl.classList.contains('menu-service__close')) {
+        serviceMenu.classList.remove('_open');
+        serviceMenulink.closest('li').classList.remove('_active')
+    }
+
+    if (targetEl.hasAttribute('data-menu-item')) {
+        const menuId = targetEl.getAttribute(`data-menu-item`);
+        const menu = document.querySelector(`[data-servce-menu="${menuId}"]`);
+
+        const allMenuItems = document.querySelectorAll('.menu-service [data-menu-item]');
+        const allMenus = document.querySelectorAll('.menu-service [data-servce-menu]');
+
+        allMenuItems.forEach(item => {
+            const itemId = item.getAttribute(`data-menu-item`);
+
+            if (itemId == menuId) {
+                item.classList.add('_active')
+            }
+            else {
+                item.classList.remove('_active')
+            }
+        })
+
+        allMenus.forEach(item => {
+            const itemId = item.getAttribute(`data-servce-menu`);
+
+            if (itemId == menuId) {
+                item.classList.add('_active')
+            }
+            else {
+                item.classList.remove('_active')
+            }
+        })
+    }
 })
 
 
 
-// const pagesMenu = document.querySelector('.pages-menu');
-// const pagesMenuButton = document.querySelector('.pages-menu button');
+function setServiceMenuTop() {
+    const header = document.querySelector('header');
+    const headerheigth = header.getBoundingClientRect().height;
 
-// pagesMenuButton.addEventListener('click', function () {
-//     pagesMenu.classList.toggle('_active');
+    const set = () => {
+        serviceMenu.style.height = window.innerHeight - headerheigth + 'px'
+        serviceMenu.style.top = headerheigth + 'px'
+    }
 
-// })
+    set();
+    window.addEventListener('resize', set);
+}
+setServiceMenuTop();

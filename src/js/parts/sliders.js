@@ -24,10 +24,14 @@ if (sliders.length) {
 
             new Swiper('.mainSwiper', {
                 modules: [
-                    Navigation, Thumbs, Pagination
+                    Navigation, Thumbs, Pagination, Autoplay
                 ],
                 spaceBetween: 20,
                 slidesPerView: 1,
+                autoplay: {
+                    pauseOnMouseEnter: true,
+                    delay: 3000
+                },
                 pagination: {
                     el: pagination,
                     clickable: true,

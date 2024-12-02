@@ -196,5 +196,206 @@
     }
 }
 
-.vk {
+.menu-service {
+    position: fixed;
+    z-index: 11;
+    width: 100%;
+    top: 145px;
+    overflow-y: auto;
+
+    background: linear-gradient(133deg, #1f4250 21.67%, #367a96 71.16%);
+    color: $white;
+    height: calc(100% - 150px);
+    overflow: hidden;
+
+    opacity: 0;
+    pointer-events: none;
+
+    ._container {
+        height: 100%;
+    }
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
+
+    @media (min-width: 1025px) {
+        &._open {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    // .menu-service__close
+
+    &__close {
+        position: absolute;
+        top: 30px;
+        right: 0;
+        z-index: 1;
+        width: 63px;
+        height: 63px;
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: #367a96;
+
+        img,
+        svg {
+            width: 27px;
+            height: 27px;
+            pointer-events: none;
+            stroke: $white;
+        }
+
+        &:after,
+        &:before {
+            position: absolute;
+            content: "";
+            left: 50%;
+            top: 50%;
+
+            width: 27px;
+            height: 1px;
+            background-color: $white;
+            transform: translate(-50%, -50%) rotate(45deg);
+            pointer-events: none;
+        }
+
+        &:after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+
+    [data-servce-menu] {
+        display: none;
+
+        &._active {
+            display: block;
+        }
+    }
+
+    // .menu-service__flex
+
+    &__flex {
+        display: flex;
+        height: 100%;
+        position: relative;
+    }
+
+    // .menu-service__left
+
+    &__left {
+        padding: 50px 20px 50px 0;
+        width: 210px;
+        flex: 0 0 auto;
+
+        div {
+            & > :not(:last-child) {
+                margin-bottom: 5px;
+            }
+        }
+
+        button {
+            display: block;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.4px;
+            padding: 15px 17px;
+            border-radius: 100px;
+
+            transition: all 0.3s ease 0s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #133145;
+                }
+            }
+        }
+
+        ._active {
+            background-color: #133145;
+        }
+    }
+
+    // .menu-service__right
+
+    &__right {
+        flex: 1 1 auto;
+        padding: 50px 20px 50px 50px;
+
+        height: 100%;
+        direction: rtl;
+        overflow-y: auto;
+        text-align: left;
+        border-left: 1px solid rgba($color: $white, $alpha: 0.11);
+
+        &::-webkit-scrollbar {
+            width: 1px;
+            background: rgba($color: $white, $alpha: 0.11);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #407184;
+        }
+
+        h3 {
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.72px;
+            margin-bottom: 37px;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.4px;
+            margin-bottom: 37px;
+        }
+
+        a {
+            transition: all 0.3s ease 0s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+        }
+
+        ul {
+            direction: ltr;
+
+            &:not(:last-child) {
+                padding-bottom: 40px;
+                margin-bottom: 25px;
+                border-bottom: 1px solid rgba($color: $white, $alpha: 0.11);
+            }
+
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 34px;
+
+            @media (max-width: 1290px) {
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+            @media (max-width: 1200px) {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            a {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 1.1;
+                letter-spacing: -0.28px;
+            }
+        }
+    }
 }

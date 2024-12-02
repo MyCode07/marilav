@@ -1,10 +1,13 @@
 .form {
     .form__item:has(input:focus) {
         border-color: $light-blue;
+        background: $white;
+
         span {
             max-height: fit-content;
         }
     }
+
     // .form__item
 
     &__item {
