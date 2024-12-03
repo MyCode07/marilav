@@ -56,7 +56,7 @@ if (submenuList.length) {
         const submenu = li.querySelector('ul');
         const link = li.querySelector('a');
 
-        if (link.getAttribute('href') == '/#mainservices') {
+        if (link.closest('.header__bottom') && link.getAttribute('href') == '/#mainservices') {
             link.insertAdjacentHTML('afterend', arrow);
         }
 
@@ -121,12 +121,16 @@ document.addEventListener('click', function (e) {
             const li = targetEl.closest('li')
             li.classList.toggle('_active');
             serviceMenu.classList.toggle('_open');
+
+            set();
         }
 
         if (targetEl.closest('li') && targetEl.tagName == 'BUTTON' && targetEl.closest('li').querySelector('[href="/#mainservices"]')) {
             const li = targetEl.closest('li')
             li.classList.toggle('_active');
             serviceMenu.classList.toggle('_open');
+
+            set();
         }
     }
 
@@ -167,17 +171,19 @@ document.addEventListener('click', function (e) {
 })
 
 
-
-function setServiceMenuTop() {
+const set = () => {
     const header = document.querySelector('header');
     const headerheigth = header.getBoundingClientRect().height;
 
-    const set = () => {
-        serviceMenu.style.height = window.innerHeight - headerheigth + 'px'
-        serviceMenu.style.top = headerheigth + 'px'
-    }
+    serviceMenu.style.height = window.innerHeight - headerheigth + 'px'
+    serviceMenu.style.top = headerheigth + 'px'
+}
 
+
+function setServiceMenuTop() {
     set();
+
     window.addEventListener('resize', set);
+    window.addEventListener('scroll', set);
 }
 setServiceMenuTop();

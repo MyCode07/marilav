@@ -1611,3 +1611,12 @@
         }
     }
 }
+
+.indication {
+    .grid {
+        @media (max-width: 768px) {
+            gap: 8px;
+            grid-template-columns: 1fr;
+        }
+    }
+}
